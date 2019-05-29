@@ -1,0 +1,17 @@
+---
+- hosts: web
+  tasks:
+    - name: creating user
+      user:
+        name: synechron
+        state: present
+    - name: creating directory
+      file:
+        name: /tmp/kapil
+        state: touch
+    - name: creating group
+      group:
+        name: chetan
+        state: present
+        gid: 1006
+

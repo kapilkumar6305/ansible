@@ -1,0 +1,12 @@
+---
+- hosts: web
+  tasks:
+    - name: creating file
+      file:
+        name: /tmp/vishnu
+        state: touch
+    - name: creating directory
+      file:
+        name: /tmp/vishnu2
+        state: directory
+
