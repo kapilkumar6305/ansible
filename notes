@@ -1,0 +1,71 @@
+
+
+https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe
+
+https://the.earth.li/~sgtatham/putty/latest/w64/puttygen.exe
+
+To install git
+apt-get update
+apt-get install git
+
+
+git config --global user.name "Chetan"
+`git config --global user.email "chetan.talwar@gmail.com"
+
+
+ssh-keygen
+
+
+Ansible------------------
+
+To set the hostname run the following command
+
+on Master
+ hostnamectl set-hostname master.example.com
+on Client
+ hostnamectl set-hostname client.example.com
+
+Installation
+cat
+On Master only->
+apt-get update
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+apt-add-repository "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main"
+apt-get update
+apt-get install ansible
+ansible --version
+
+
+To Install python on client
+
+apt-get update
+apt-get install python
+
+python --version
+
+deprecation_warnings = False
+
+#####################################
+
+Handlers:
+
+
+---
+- hosts: web
+  tasks:
+    - name: copy a file
+      copy:
+         src: copy.html
+         dest: /var/www/html/index.html
+      notify:
+          restart apache
+    - name: template module
+      template:
+        src: copy.html.j2
+        dest: /var/www/html/temp.html
+  handlers:
+    - name: restart apache
+      service:
+        name: apache2
+        state: restarted
+
