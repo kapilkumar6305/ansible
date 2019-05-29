@@ -4,7 +4,14 @@
       copy:
         src: copy.html.j2
         dest: /var/www/html/copy.html
+      notify:
+        - restart apache
     - name: template module
       template:
         src: copy.html.j2
-        dest: /var/www/html/temp.html 
+        dest: /var/www/html/temp.html
+  handlers:
+    - name: restart apache
+      service: 
+        name: apache2
+        state: restarted 
