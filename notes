@@ -69,3 +69,55 @@ Handlers:
         name: apache2
         state: restarted
 
+
+docker:
+docker run image_name
+docker pull image_name
+docker images
+docker ps -a
+docker start c25570457082
+docker stop c25570457082
+docker rm container_id/Name       (-f: for forcefully)
+docker rmi image_name/image_id
+docker run -it ubuntu /bin/bash
+apt-get update
+from container to put in to d attached mode key combination is ctrl+p+q
+
+//centos
+docker run -it centos /bin/bash                    //running container in interactive mode
+yum update                                         //command to update in cenos
+docker inspect container_id/Name                   //for detail about container
+docker run -d nginx                                //for running container in daemon mode
+curl 172.17.0.3                                    // to hit the ip in machine itshelf
+docker exec -it 1f5765ee6d27 /bin/bash             //entering into existing container
+docker run -d --name specifiedContainer_Name image //for giving user defined name to container
+docker run -d --name myapp -p 8080:80 nginx        //for binding the port to machine port
+docker  commit c79c142152b6 myimage                //creating own images from runnung containor
+ 
+//creating image via dockerfile
+
+vi Dockerfile
+In DockerFile
+#########################################
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install vim -y
+RUN mkdir test2
+
+
+docker build -t testimage:1.0 .
+if u want to create image without using default dockerfile name
+docker build -f filename -t imagename path
+
+////Kubernetes
+
+minikube  --for learning purpose
+
+docker tag testimage:1.0 kkapil84/mysyneimage
+
+
+
+
+
+
+
