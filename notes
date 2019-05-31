@@ -142,6 +142,8 @@ To check jenkins is up and running
 
 service jenkins status
 
+usermod -a G docker jenkins~ 
+
 
 
 
