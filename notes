@@ -115,8 +115,32 @@ minikube  --for learning purpose
 
 docker tag testimage:1.0 kkapil84/mysyneimage
 
+Continuous Integration - Production is manual
+Continuous Delivery -production required littile bit manual intervention
+Continuous Deployment -production is fully automated
+jenkins is open source CI server
+Jenkins is a self-contained open source tool
+
+jenkins:--
+
+apt-get update
+apt-get  install openjdk-8-jdk
+
+To verify java is installed or not
+
+java -version
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add
+echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+
+apt-get update
+
+apt-get install jenkins
 
 
+To check jenkins is up and running
+
+service jenkins status
 
 
 
